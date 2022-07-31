@@ -1,2 +1,2 @@
 # Memory-Jog
-Mastery on your way!
+Mastery is on your way!
