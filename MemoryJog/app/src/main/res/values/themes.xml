@@ -27,6 +27,7 @@
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:padding">16dp</item>
         <item name="drawableTint">@color/purple_200</item>
+        <item name="fontFamily">sans-serif</item>
         <item name="android:textColor">@color/title_color</item>
     </style>
 
