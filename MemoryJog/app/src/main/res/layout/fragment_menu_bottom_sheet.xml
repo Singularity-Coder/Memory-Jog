@@ -7,7 +7,7 @@
     android:background="@drawable/bg_top_rounded"
     android:orientation="vertical"
     android:paddingBottom="8dp"
-    tools:context=".MenuBottomSheetFragment">
+    tools:context=".bottomsheets.MenuBottomSheetFragment">
 
     <ImageView
         android:src="@drawable/ic_round_horizontal_rule_24"

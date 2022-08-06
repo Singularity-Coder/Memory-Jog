@@ -31,11 +31,37 @@
         <item name="android:textColor">@color/title_color</item>
     </style>
 
+    <!--Bottom Sheet ///////////////////////////////////////////////////// -->
     <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
     </style>
 
     <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="SheetDialog" parent="Theme.Material3.Light.BottomSheetDialog">
+        <!--<item name="android:windowCloseOnTouchOutside">false</item>-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <!--////////////////////////////////////////////////////////// -->
+
+    <style name="RoundSmall" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="RoundButtonSmall" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeTopLeft">8dp</item>
+        <item name="cornerSizeTopRight">8dp</item>
     </style>
 </resources>

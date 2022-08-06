@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.Toast
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
@@ -16,6 +17,9 @@ import java.util.concurrent.TimeUnit
 
 const val DB_QUESTION = "db_question"
 const val TABLE_QUESTION = "table_question"
+
+const val TAG_ADD_TOPIC_MODAL_BOTTOM_SHEET = "TAG_ADD_TOPIC_MODAL_BOTTOM_SHEET"
+const val TAG_MENU_MODAL_BOTTOM_SHEET = "TAG_MODAL_BOTTOM_SHEET"
 
 fun View.showSnackBar(
     message: String,
@@ -167,6 +171,17 @@ fun Int.minutes(): Long = TimeUnit.MINUTES.toMillis(this.toLong())
 
 fun Int.hours(): Long = TimeUnit.HOURS.toMillis(this.toLong())
 
+// https://stackoverflow.com/questions/37104960/bottomsheetdialog-with-transparent-background
+fun BottomSheetDialogFragment.setTransparentBackground() {
+    dialog?.apply {
+        // window?.setDimAmount(0.2f) // Set dim amount here
+        setOnShowListener {
+            val bottomSheet = findViewById<View?>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.setBackgroundResource(android.R.color.transparent)
+        }
+    }
+}
+
 enum class DateType(val value: String) {
     SPACE_dd_MMM_yyyy(value = "dd MMM yyyy"),
     HYPEN_dd_MMM_yyyy_h_mm_a(value = "dd-MMM-yyyy h:mm a"),
@@ -174,4 +189,11 @@ enum class DateType(val value: String) {
     SPACE_dd_MMM_yyyy_hh_mm_ss_a(value = "dd MMM yyyy, hh:mm:ss a"),
     SPACE_dd_MMM_yyyy_h_mm_ss_aaa(value = "dd MMM yyyy, h:mm:ss aaa"),
     HYPEN_yyyy_MM_dd_T_HH_mm_ss_SS_Z(value = "yyyy-MM-dd'T'HH:mm:ss.SS'Z'")
+}
+
+enum class MenuAction {
+    SHOW_HIDE_ANSWERS,
+    SHOW_HIDE_HINTS,
+    ADD_QUESTION,
+    IMPORT_QUESTION_FROM_CSV
 }

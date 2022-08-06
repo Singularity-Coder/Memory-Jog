@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.singularitycoder.memoryjog.bottomsheets.AddTopicBottomSheetFragment
 import com.singularitycoder.memoryjog.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,16 +38,21 @@ class MainActivity : AppCompatActivity() {
             ibAddTopic.performClick()
         }
         ibAddTopic.setOnClickListener {
-            topicTabsList.add("Science")
-            tabLayoutTopics.addTab(
-                tabLayoutTopics.newTab().apply {
-                    text = topicTabsList[topicTabsList.lastIndex]
-                },
-                if (topicTabsList.isNotEmpty()) topicTabsList.lastIndex else 0,
-                true
-            )
-            binding.viewpagerReminders.adapter?.notifyItemInserted(topicTabsList.lastIndex)
+            AddTopicBottomSheetFragment.newInstance().show(supportFragmentManager, TAG_ADD_TOPIC_MODAL_BOTTOM_SHEET)
         }
+    }
+
+    // https://stackoverflow.com/questions/13445594/data-sharing-between-fragments-and-activity-in-android
+    fun addTopic(topic: String) {
+        topicTabsList.add(topic)
+        binding.tabLayoutTopics.addTab(
+            binding.tabLayoutTopics.newTab().apply {
+                text = topicTabsList[topicTabsList.lastIndex]
+            },
+            if (topicTabsList.isNotEmpty()) topicTabsList.lastIndex else 0,
+            true
+        )
+        binding.viewpagerReminders.adapter?.notifyItemInserted(topicTabsList.lastIndex)
     }
 
     inner class QuestionsViewPagerAdapter(
