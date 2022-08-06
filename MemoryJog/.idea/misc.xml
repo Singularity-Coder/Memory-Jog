@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable/round_help_24.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/round_lightbulb_circle_24.xml" value="0.132" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_add_question_bottom_sheet.xml" value="0.21285140562248997" />
         <entry key="app/src/main/res/layout/fragment_add_topic_bottom_sheet.xml" value="0.21285140562248997" />
         <entry key="app/src/main/res/layout/fragment_menu_bottom_sheet.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_menu_modal_bottom_sheet_dialog.xml" value="0.1962962962962963" />
