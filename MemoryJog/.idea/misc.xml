@@ -4,7 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/bg_tab_indicator.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/ic_round_add_24.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/round_check_circle_24.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/round_help_24.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/round_lightbulb_circle_24.xml" value="0.132" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_questions.xml" value="0.2759665226590806" />
+        <entry key="app/src/main/res/layout/list_item_question.xml" value="0.25" />
       </map>
     </option>
   </component>
