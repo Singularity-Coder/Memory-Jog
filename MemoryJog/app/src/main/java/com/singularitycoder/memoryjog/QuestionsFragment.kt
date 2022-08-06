@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.singularitycoder.memoryjog.databinding.FragmentQuestionsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class QuestionsFragment : Fragment() {
 
     companion object {
@@ -29,6 +31,23 @@ class QuestionsFragment : Fragment() {
         binding = FragmentQuestionsBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.setupUI()
+        binding.setupUserActionListeners()
+    }
+
+    private fun FragmentQuestionsBinding.setupUI() {
+        etSearch.hint = "Search ${topicParam?.lowercase()} questions"
+    }
+
+    private fun FragmentQuestionsBinding.setupUserActionListeners() {
+        fabMenu.setOnClickListener {
+            MenuBottomSheetFragment.newInstance().show(requireActivity().supportFragmentManager, TAG_MODAL_BOTTOM_SHEET)
+        }
+    }
 }
 
 private const val ARG_PARAM_TOPIC = "ARG_PARAM_TOPIC"
+private const val TAG_MODAL_BOTTOM_SHEET = "TAG_MODAL_BOTTOM_SHEET"

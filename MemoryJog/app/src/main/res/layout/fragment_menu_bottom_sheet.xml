@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_top_rounded"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    tools:context=".MenuBottomSheetFragment">
+
+    <ImageView
+        android:src="@drawable/ic_round_horizontal_rule_24"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:tint="@color/light_gray" />
+
+    <TextView
+        android:id="@+id/tv_show_hide_answers"
+        style="@style/BottomSheetButtonStyle"
+        android:drawableStart="@drawable/ic_round_check_24"
+        android:text="Show / Hide Answers" />
+
+    <TextView
+        android:id="@+id/tv_show_hide_hints"
+        style="@style/BottomSheetButtonStyle"
+        android:drawableStart="@drawable/ic_outline_lightbulb_24"
+        android:text="Show / Hide Hints" />
+
+    <TextView
+        android:id="@+id/tv_add_question"
+        style="@style/BottomSheetButtonStyle"
+        android:drawableStart="@drawable/ic_round_add_24"
+        android:text="Add Question" />
+
+    <TextView
+        android:id="@+id/tv_import_questions_csv"
+        style="@style/BottomSheetButtonStyle"
+        android:drawableStart="@drawable/ic_outline_file_download_24"
+        android:text="Import Questions (CSV)" />
+
+</LinearLayout>
