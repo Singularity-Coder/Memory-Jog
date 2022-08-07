@@ -9,7 +9,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.singularitycoder.memoryjog.MenuAction
 import com.singularitycoder.memoryjog.R
 import com.singularitycoder.memoryjog.SharedViewModel
-import com.singularitycoder.memoryjog.TAG_ADD_QUESTION_MODAL_BOTTOM_SHEET
 import com.singularitycoder.memoryjog.databinding.FragmentMenuBottomSheetBinding
 
 class MenuBottomSheetFragment : BottomSheetDialogFragment() {
@@ -47,7 +46,6 @@ class MenuBottomSheetFragment : BottomSheetDialogFragment() {
             }
             tvAddQuestion.setOnClickListener {
                 viewModel.menuLiveData.value = MenuAction.ADD_QUESTION
-                AddQuestionBottomSheetFragment.newInstance().show(requireActivity().supportFragmentManager, TAG_ADD_QUESTION_MODAL_BOTTOM_SHEET)
                 dismiss()
             }
             tvImportQuestionsCsv.setOnClickListener {

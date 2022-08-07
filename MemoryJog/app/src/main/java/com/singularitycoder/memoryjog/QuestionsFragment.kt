@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.singularitycoder.memoryjog.bottomsheets.AddQuestionBottomSheetFragment
 import com.singularitycoder.memoryjog.bottomsheets.MenuBottomSheetFragment
 import com.singularitycoder.memoryjog.databinding.FragmentQuestionsBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,6 +25,8 @@ class QuestionsFragment : Fragment() {
     private lateinit var binding: FragmentQuestionsBinding
 
     private val viewModel: SharedViewModel by activityViewModels()
+    private val questionsAdapter = QuestionsAdapter()
+    private val questionList = mutableListOf<Question>()
 
     private var topicParam: String? = null
 
@@ -45,11 +49,17 @@ class QuestionsFragment : Fragment() {
 
     private fun FragmentQuestionsBinding.setupUI() {
         etSearch.hint = "Search ${topicParam?.lowercase()} questions"
+        rvQuestions.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = questionsAdapter
+        }
     }
 
     private fun FragmentQuestionsBinding.setupUserActionListeners() {
         fabMenu.setOnClickListener {
             MenuBottomSheetFragment.newInstance().show(requireActivity().supportFragmentManager, TAG_MENU_MODAL_BOTTOM_SHEET)
+        }
+        questionsAdapter.setOnQuestionClickListener { it: Question ->
         }
     }
 
@@ -64,12 +74,18 @@ class QuestionsFragment : Fragment() {
                     binding.root.showSnackBar("hints")
                 }
                 MenuAction.ADD_QUESTION -> {
-                    binding.root.showSnackBar("add question")
+                    AddQuestionBottomSheetFragment.newInstance().show(requireActivity().supportFragmentManager, TAG_ADD_QUESTION_MODAL_BOTTOM_SHEET)
                 }
                 MenuAction.IMPORT_QUESTION_FROM_CSV -> {
                     binding.root.showSnackBar("Import from csv")
                 }
             }
+        }
+
+        viewModel.questionLiveData.observe(viewLifecycleOwner) { it: Question? ->
+            it ?: return@observe
+            questionsAdapter.questionList = questionList.apply { add(it) }
+            questionsAdapter.notifyItemInserted(if (questionList.isEmpty()) 0 else questionList.lastIndex)
         }
     }
 }

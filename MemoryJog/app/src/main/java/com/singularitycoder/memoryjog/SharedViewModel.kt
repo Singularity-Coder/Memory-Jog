@@ -8,4 +8,6 @@ import javax.inject.Inject
 @HiltViewModel
 class SharedViewModel @Inject constructor() : ViewModel() {
     val menuLiveData = MutableLiveData<MenuAction>()
+    val questionLiveData = MutableLiveData<Question>()
+    val questionAccidentBackupLiveData = MutableLiveData<Question?>()
 }
