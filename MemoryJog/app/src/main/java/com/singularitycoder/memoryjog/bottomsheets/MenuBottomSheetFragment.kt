@@ -10,7 +10,9 @@ import com.singularitycoder.memoryjog.MenuAction
 import com.singularitycoder.memoryjog.R
 import com.singularitycoder.memoryjog.SharedViewModel
 import com.singularitycoder.memoryjog.databinding.FragmentMenuBottomSheetBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MenuBottomSheetFragment : BottomSheetDialogFragment() {
 
     companion object {

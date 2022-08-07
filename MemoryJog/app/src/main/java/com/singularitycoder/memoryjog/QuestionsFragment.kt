@@ -68,10 +68,18 @@ class QuestionsFragment : Fragment() {
             it ?: return@observe
             when (it) {
                 MenuAction.SHOW_HIDE_ANSWERS -> {
-                    binding.root.showSnackBar("answers")
+                    questionsAdapter.questionList = questionList.map {
+                        it.isAnswerVisible = it.isAnswerVisible.not()
+                        it
+                    }
+                    questionsAdapter.notifyDataSetChanged()
                 }
                 MenuAction.SHOW_HIDE_HINTS -> {
-                    binding.root.showSnackBar("hints")
+                    questionsAdapter.questionList = questionList.map {
+                        it.isHintVisible = it.isHintVisible.not()
+                        it
+                    }
+                    questionsAdapter.notifyDataSetChanged()
                 }
                 MenuAction.ADD_QUESTION -> {
                     AddQuestionBottomSheetFragment.newInstance().show(requireActivity().supportFragmentManager, TAG_ADD_QUESTION_MODAL_BOTTOM_SHEET)

@@ -31,6 +31,14 @@
         <item name="android:textColor">@color/title_color</item>
     </style>
 
+    <style name="ButtonAttrs">
+        <item name="android:inputType">textMultiLine</item> <!-- Multiline input -->
+        <item name="android:lines">8</item> <!-- Total Lines prior display -->
+        <item name="android:minLines">8</item> <!-- Minimum lines -->
+        <item name="android:scrollbars">vertical</item> <!-- Vertical Scroll Bar -->
+        <item name="android:gravity">top|start</item> <!-- Cursor Position -->
+    </style>
+
     <!--Bottom Sheet ///////////////////////////////////////////////////// -->
     <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
@@ -56,7 +64,6 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">24dp</item>
     </style>
-
 
     <style name="RoundSuperSmall" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">rounded</item>

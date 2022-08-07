@@ -2,6 +2,7 @@ package com.singularitycoder.memoryjog
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.singularitycoder.memoryjog.databinding.ListItemQuestionBinding
 
@@ -35,6 +36,13 @@ class QuestionsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 tvQuestion.text = question.question
                 tvHint.text = question.hint
                 tvAnswer.text = question.answer
+
+                tvHint.isVisible = question.isHintVisible
+                ivHint.isVisible = question.isHintVisible
+
+                tvAnswer.isVisible = question.isAnswerVisible
+                ivAnswer.isVisible = question.isAnswerVisible
+
                 root.setOnClickListener {
                     questionClickListener.invoke(question)
                 }

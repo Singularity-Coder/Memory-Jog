@@ -11,6 +11,9 @@ import com.singularitycoder.memoryjog.bottomsheets.AddTopicBottomSheetFragment
 import com.singularitycoder.memoryjog.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+// TODO long click on topic to delete or edit
+// TODO long press on question to delete or edit
+
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 

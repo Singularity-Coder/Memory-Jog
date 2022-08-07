@@ -1,11 +1,11 @@
 package com.singularitycoder.memoryjog.bottomsheets
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.activityViewModels
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -15,7 +15,9 @@ import com.singularitycoder.memoryjog.SharedViewModel
 import com.singularitycoder.memoryjog.databinding.FragmentAddQuestionBottomSheetBinding
 import com.singularitycoder.memoryjog.dpToPx
 import com.singularitycoder.memoryjog.setTransparentBackground
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AddQuestionBottomSheetFragment : BottomSheetDialogFragment() {
 
     companion object {
@@ -39,6 +41,16 @@ class AddQuestionBottomSheetFragment : BottomSheetDialogFragment() {
         binding.observeForData()
     }
 
+    // https://stackoverflow.com/questions/40616833/bottomsheetdialogfragment-listen-to-dismissed-by-user-event
+    override fun onCancel(dialog: DialogInterface) {
+        super.onCancel(dialog)
+        viewModel.questionAccidentBackupLiveData.value = Question(
+            question = binding.etQuestion.editText?.text.toString(),
+            hint = binding.etHint.editText?.text.toString(),
+            answer = binding.etAnswer.editText?.text.toString()
+        )
+    }
+
     private fun FragmentAddQuestionBottomSheetBinding.setupUserActionListeners() {
         etQuestion.doTextFieldEmptyValidation()
         etQuestion.setBoxStrokeOnFocusChange()
@@ -59,16 +71,6 @@ class AddQuestionBottomSheetFragment : BottomSheetDialogFragment() {
             )
             dismiss()
         }
-
-        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                viewModel.questionAccidentBackupLiveData.value = viewModel.questionLiveData.value?.copy(
-                    question = etQuestion.editText?.text.toString(),
-                    hint = etHint.editText?.text.toString(),
-                    answer = etAnswer.editText?.text.toString()
-                )
-            }
-        })
     }
 
     private fun FragmentAddQuestionBottomSheetBinding.observeForData() {

@@ -11,7 +11,9 @@ import com.singularitycoder.memoryjog.MainActivity
 import com.singularitycoder.memoryjog.databinding.FragmentAddTopicBottomSheetBinding
 import com.singularitycoder.memoryjog.dpToPx
 import com.singularitycoder.memoryjog.setTransparentBackground
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AddTopicBottomSheetFragment : BottomSheetDialogFragment() {
 
     companion object {
