@@ -5,9 +5,15 @@
       <map>
         <entry key="app/src/main/res/drawable/bg_tab_indicator.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/bg_top_rounded.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/ic_custom_answer.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_custom_hint.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_custom_question.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/ic_outline_lightbulb_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_round_add_24.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/ic_round_check_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_round_download_for_offline_24.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/ic_round_horizontal_rule_24.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/ic_round_question_mark_24.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/round_check_circle_24.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/round_help_24.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/round_lightbulb_circle_24.xml" value="0.132" />
@@ -17,7 +23,7 @@
         <entry key="app/src/main/res/layout/fragment_menu_bottom_sheet.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_menu_modal_bottom_sheet_dialog.xml" value="0.1962962962962963" />
         <entry key="app/src/main/res/layout/fragment_questions.xml" value="0.19272727272727272" />
-        <entry key="app/src/main/res/layout/list_item_question.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/list_item_question.xml" value="0.375" />
       </map>
     </option>
   </component>

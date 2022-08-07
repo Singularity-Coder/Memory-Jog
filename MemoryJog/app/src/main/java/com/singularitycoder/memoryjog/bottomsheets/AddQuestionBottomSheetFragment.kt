@@ -52,7 +52,7 @@ class AddQuestionBottomSheetFragment : BottomSheetDialogFragment() {
         btnAddQuestion.setOnClickListener {
             if (isValidateInput().not()) return@setOnClickListener
             viewModel.questionAccidentBackupLiveData.value = null
-            viewModel.questionLiveData.value = viewModel.questionLiveData.value?.copy(
+            viewModel.questionLiveData.value = Question(
                 question = etQuestion.editText?.text.toString(),
                 hint = etHint.editText?.text.toString(),
                 answer = etAnswer.editText?.text.toString()
