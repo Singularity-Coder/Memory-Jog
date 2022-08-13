@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Echo Me</string>
-    <string name="app_name_2">Memory Jog</string>
+    <string name="app_name">Memory Jog</string>
+    <string name="app_name_1">Echo Me</string>
     <string name="app_name_3">Memory Jogger</string>
 </resources>
