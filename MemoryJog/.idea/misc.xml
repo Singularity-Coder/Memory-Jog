@@ -10,9 +10,11 @@
         <entry key="app/src/main/res/drawable/ic_custom_question.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/ic_outline_lightbulb_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_round_add_24.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/ic_round_add_circle_24.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/ic_round_check_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_round_download_for_offline_24.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/ic_round_horizontal_rule_24.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/ic_round_menu_24.xml" value="0.201" />
         <entry key="app/src/main/res/drawable/ic_round_question_mark_24.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/round_check_circle_24.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/round_help_24.xml" value="0.132" />
